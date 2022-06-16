@@ -1,6 +1,7 @@
 package no.hypernett.studentwebflux
 
 import org.junit.jupiter.api.Test
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.data.r2dbc.DataR2dbcTest
 import org.springframework.context.annotation.Import
 import reactor.test.StepVerifier
@@ -9,8 +10,8 @@ import reactor.test.StepVerifier
 @Import(EmployeeService::class)
 class EmployeeServiceModificationsTest {
 
+    @Autowired
     lateinit var service: EmployeeService
-    lateinit var repository: EmployeeRepository
 
     @Test
     fun `create returns the created Employee`() {
