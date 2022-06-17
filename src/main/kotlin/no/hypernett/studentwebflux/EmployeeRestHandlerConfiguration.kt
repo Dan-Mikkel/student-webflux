@@ -3,7 +3,6 @@ package no.hypernett.studentwebflux
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.context.annotation.Profile
-import org.springframework.http.MediaType
 import org.springframework.web.reactive.function.server.router
 
 @Configuration
