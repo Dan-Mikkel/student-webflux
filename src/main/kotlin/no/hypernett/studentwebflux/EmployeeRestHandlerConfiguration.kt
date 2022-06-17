@@ -12,11 +12,11 @@ class EmployeeRestHandlerConfiguration {
 
     @Bean
     fun routes(handler: EmployeeRestHandler) = router {
-            GET("/employees", handler::getAll)
-            GET("/employees/{id}", handler::getById)
-            POST("/employees", handler::create)
-            PUT("/employees/{id}", handler::update)
-            DELETE("/employees/{id}", handler::delete)
+        GET("/employees", handler::getAll)
+        GET("/employees/{id}", handler::getById)
+        POST("/employees", handler::create)
+        PUT("/employees/{id}", handler::update)
+        DELETE("/employees/{id}", handler::delete)
     }
 
 }
