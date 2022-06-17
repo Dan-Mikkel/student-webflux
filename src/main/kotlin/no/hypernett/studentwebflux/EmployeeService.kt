@@ -14,7 +14,7 @@ class EmployeeService(private val repo: EmployeeRepository) {
         return repo.findAll()
     }
 
-    fun getById(id: Long): Mono<Employee> {
+    fun getById(id: EmployeeId): Mono<Employee> {
         return repo.findById(id)
     }
 
@@ -22,13 +22,13 @@ class EmployeeService(private val repo: EmployeeRepository) {
         return repo.save(Employee(null, name, salary, region))
     }
 
-    fun update(id: Long, name: String, salary: Double, region: String): Mono<Employee> {
+    fun update(id: EmployeeId, name: String, salary: Double, region: String): Mono<Employee> {
         return repo.findById(id)
             .map { e -> Employee(e.id, name, salary, region) }
             .flatMap { t -> repo.save(t).thenReturn(t) }
     }
 
-    fun delete(id: Long): Mono<Employee> {
+    fun delete(id: EmployeeId): Mono<Employee> {
         return repo.findById(id)
             .flatMap { e -> repo.deleteById(e.id!!).thenReturn(e) }
     }
