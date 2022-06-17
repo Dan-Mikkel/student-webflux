@@ -23,23 +23,23 @@ class SeedDb(private val client: DatabaseClient, private val repository: Employe
             .then()
             .subscribe { log.info("Created") }
         val emps = listOf(
-            Employee(null, "James", 25000, "London"),
-            Employee(null, "James", 21000, "London"),
-            Employee(null, "Marie", 22000, "Edinburgh"),
-            Employee(null, "Peter", 23000, "Belfast"),
-            Employee(null, "Sally", 24000, "Cardiff"),
-            Employee(null, "Peter", 51000, "London"),
-            Employee(null, "Berty", 52000, "Edinburgh"),
-            Employee(null, "Milly", 53000, "Belfast"),
-            Employee(null, "Jayne", 54000, "Cardiff"),
-            Employee(null, "Wally", 91000, "London"),
-            Employee(null, "Emily", 92000, "Edinburgh"),
-            Employee(null, "Tommy", 93000, "Belfast"),
-            Employee(null, "Colin", 94000, "Cardiff"),
-            Employee(null, "Sarah", 121000, "London"),
-            Employee(null, "Darel", 122000, "Edinburgh"),
-            Employee(null, "Benji", 123000, "Belfast"),
-            Employee(null, "Carys", 124000, "Cardiff")
+            Employee(null, "James", 25000.0, "London"),
+            Employee(null, "James", 21000.0, "London"),
+            Employee(null, "Marie", 22000.0, "Edinburgh"),
+            Employee(null, "Peter", 23000.0, "Belfast"),
+            Employee(null, "Sally", 24000.0, "Cardiff"),
+            Employee(null, "Peter", 51000.0, "London"),
+            Employee(null, "Berty", 52000.0, "Edinburgh"),
+            Employee(null, "Milly", 53000.0, "Belfast"),
+            Employee(null, "Jayne", 54000.0, "Cardiff"),
+            Employee(null, "Wally", 91000.0, "London"),
+            Employee(null, "Emily", 92000.0, "Edinburgh"),
+            Employee(null, "Tommy", 93000.0, "Belfast"),
+            Employee(null, "Colin", 94000.0, "Cardiff"),
+            Employee(null, "Sarah", 121000.0, "London"),
+            Employee(null, "Darel", 122000.0, "Edinburgh"),
+            Employee(null, "Benji", 123000.0, "Belfast"),
+            Employee(null, "Carys", 124000.0, "Cardiff")
         )
         repository.deleteAll()
             .thenMany(Flux.fromIterable(emps))
