@@ -5,6 +5,9 @@ import org.springframework.context.ApplicationListener
 import org.springframework.r2dbc.core.DatabaseClient
 import org.springframework.stereotype.Component
 import reactor.core.publisher.Flux
+import mu.KotlinLogging
+
+private val log = KotlinLogging.logger {}
 
 @Component
 class SeedDb(private val client: DatabaseClient, private val repository: EmployeeRepository) : ApplicationListener<ApplicationReadyEvent> {
